@@ -1,0 +1,56 @@
+﻿<Window x:Class="Tetris.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tetris"
+        mc:Ignorable="d"
+        Title="Tetris" Height="450" Width="800" KeyDown="Input" SizeChanged="Resized"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width ="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="LightGray" Grid.Column="3">
+            <Button
+            Grid.Column="1" Content="PLAY" TextBlock.FontSize="20" Margin="30"
+            VerticalAlignment="Top" HorizontalAlignment="Center" Width="110" Height="30"
+            Click= "Start">
+            </Button>
+            <Button
+            Grid.Column="1" Content="Restart" TextBlock.FontSize="20" Margin="10"
+            VerticalAlignment="Top" HorizontalAlignment="Center" Width="110" Height="30"
+            Click= "Restart">
+            </Button>
+            <Button
+            Grid.Column="1" Content="EASY" TextBlock.FontSize="18" Foreground="DarkGreen" Margin="10" 
+            VerticalAlignment="Top" HorizontalAlignment="Center" Width="110" Height="30"
+                Click= "Easy">
+            </Button>
+            <Button
+            Grid.Column="1" Content="MEDIUM" TextBlock.FontSize="18" Foreground="DarkGoldenrod" Margin="10" 
+            VerticalAlignment="Top" HorizontalAlignment="Center" Width="110" Height="30"
+                Click= "Medium">
+            </Button>
+            <Button
+            Grid.Column="1" Content="HARD" TextBlock.FontSize="18" Foreground ="Firebrick" Margin="10"
+            VerticalAlignment="Top" HorizontalAlignment="Center" Width="110" Height="30"
+                Click= "Hard">
+            </Button>
+            <Button Grid.Column="1" Content = "CRAZY" TextBlock.FontSize ="18" Foreground ="Purple" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Center" Width="110" Height="30"
+                Click= "Crazy"/>
+                <TextBlock x:Name ="Score" Text="Score: 0" TextAlignment="Center" FontSize="20" Margin="20" HorizontalAlignment="Center"
+                       Width="110" Height="30" VerticalAlignment="Bottom"/>
+        </StackPanel>
+
+        <StackPanel Panel.ZIndex="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <TextBlock  x:Name="Label" Text = "Choose the difficulty" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Margin = "10"/>
+        </StackPanel>
+
+        <Canvas Panel.ZIndex="0" x:Name="canvas" Grid.Column="0" Grid.ColumnSpan="3"/>
+    </Grid>
+</Window>
